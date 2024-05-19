@@ -1,0 +1,59 @@
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+}
+
+.nav-item {
+  margin-right: 1px;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-toggler,
+  svg {
+    color: white !important;
+    border-color: white !important;
+  }
+
+  #link {
+    color: white !important;
+  }
+}
+
+#orange {
+  background-color: transparent !important;
+  margin-top: -4em !important;
+}
+
+#colorlib-main-nav {
+  overflow: hidden !important;
+}
+
+#hamburger {
+  margin-right: 1em;
+}
+
+#hamburger i,
+#hamburger i::before,
+#hamburger i::after {
+  background-color: #fff;
+  border: 0.11em solid #13357b !important;
+  padding: 0.1em !important;
+}
+
+nav .active,
+#mobi .active {
+  color: lightblue !important;
+}
+
+.fixed {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 4.7em;
+  background: rgba(255, 255, 255, 1);
+  transition: 0.7s;
+}

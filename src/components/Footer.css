@@ -1,0 +1,33 @@
+.footer path,
+.copyright path {
+  color: white !important;
+}
+
+.footer {
+  z-index: 99 !important;
+  display: none !important  ;
+}
+
+.footer a {
+  color: white !important;
+}
+
+.copyright span {
+  color: white;
+}
+
+.footer a {
+  font-size: 16px;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+h4 {
+  color: white !important;
+}
+
+#white {
+  color: white !important;
+}

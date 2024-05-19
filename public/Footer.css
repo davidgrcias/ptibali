@@ -1,0 +1,20 @@
+.footer path,
+.copyright path {
+  color: white !important;
+}
+
+.copyright span {
+  color: white;
+}
+
+.footer a {
+  font-size: 16px;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+#foot {
+  z-index: 1000 !important;
+}
