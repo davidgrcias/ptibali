@@ -74,12 +74,6 @@ function FloatButton() {
           </a>
           <ul className="floatingMenu">
             <li>
-              <a href="#">Add Supplier</a>
-            </li>
-            <li>
-              <a href="#">Add Table</a>
-            </li>
-            <li>
               <a href="#" onclick="window.dialog.showModal();">
                 Scream Challenge &nbsp;<i class="fa-solid fa-gamepad"></i>
               </a>

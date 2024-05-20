@@ -20,6 +20,10 @@
   font-family: "Merriweather", serif;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
 #carouselId .carousel-control-next-icon,
 #carouselId .carousel-control-prev-icon {
   color: #fff !important;
@@ -54,4 +58,21 @@
 
 .carousel-caption {
   z-index: 1 !important;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 43.9em !important;
+  }
+  .carousel-inner {
+    margin-bottom: 0em !important;
+    height: 80em !important;
+  }
+  .carousel-caption {
+    height: 50em !important;
+  }
+
+  .carousel-caption .p3 {
+    margin-top: 10em !important;
+  }
 }

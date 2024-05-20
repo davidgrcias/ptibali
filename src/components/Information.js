@@ -5,6 +5,11 @@ import axios from "axios";
 function Information() {
   const [data, setData] = useState({});
   const [distance, setDistance] = useState({ km: 0, miles: 0 });
+  const [travelTimes, setTravelTimes] = useState({
+    car: 0,
+    walk: 0,
+    motorcycle: 0,
+  });
   const location = "Bali"; // Static location as Bali
 
   const url =
@@ -50,6 +55,17 @@ function Information() {
         setDistance({
           km: distanceKm.toFixed(2),
           miles: distanceMiles.toFixed(2),
+        });
+
+        // Calculate travel times
+        const carSpeed = 60; // km/h
+        const walkSpeed = 5; // km/h
+        const motorcycleSpeed = 40; // km/h
+
+        setTravelTimes({
+          car: (distanceKm / carSpeed).toFixed(2),
+          walk: (distanceKm / walkSpeed).toFixed(2),
+          motorcycle: (distanceKm / motorcycleSpeed).toFixed(2),
         });
       } catch (error) {
         console.error("Error fetching geolocation data:", error);
@@ -111,8 +127,17 @@ function Information() {
       window
         .jQuery("#number1")
         .jQuerySimpleCounter({ end: distance.km, duration: 3000 });
+      window
+        .jQuery("#number2")
+        .jQuerySimpleCounter({ end: travelTimes.car, duration: 3000 });
+      window
+        .jQuery("#number3")
+        .jQuerySimpleCounter({ end: travelTimes.walk, duration: 3000 });
+      window
+        .jQuery("#number4")
+        .jQuerySimpleCounter({ end: travelTimes.motorcycle, duration: 3000 });
     }
-  }, [distance]);
+  }, [distance, travelTimes]);
 
   return (
     <>
@@ -202,7 +227,7 @@ function Information() {
                     55
                   </p>
                   <span />
-                  <p>Travel Time (By Car)</p>
+                  <p>Travel Time (By Car In Hours)</p>
                 </div>
                 <div
                   className="item wow fadeInUpBig animated animated"
@@ -214,7 +239,7 @@ function Information() {
                     359
                   </p>
                   <span />
-                  <p>Travel Time (By Walk)</p>
+                  <p>Travel Time (By Walk In Hours)</p>
                 </div>
                 <div
                   className="item wow fadeInUpBig animated animated"
@@ -226,7 +251,7 @@ function Information() {
                     246
                   </p>
                   <span />
-                  <p>Travel Time (By Motorcycle)</p>
+                  <p>Travel Time (By Motor In Hours)</p>
                 </div>
               </div>
             </div>
