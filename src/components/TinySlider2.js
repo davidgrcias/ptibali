@@ -229,7 +229,7 @@ function TinySlider2() {
       </Helmet>
       {/* Footer Start */}
       <div
-        className="section section-3"
+        className="section section-3 mt-5"
         id="container2"
         data-aos="fade-up"
         data-aos-delay={100}

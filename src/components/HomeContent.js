@@ -201,7 +201,6 @@ function HomeContent() {
             </ol>
             <div className="carousel-inner" role="listbox">
               <div className="carousel-item active">
-                <img src={ew} className="img-fluid" alt="Image" />
                 <div className="carousel-caption">
                   <div className="p-3" style={{ maxWidth: 900 }}>
                     <h4
@@ -243,7 +242,6 @@ function HomeContent() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={ews} className="img-fluid" alt="Image" />
                 <div className="carousel-caption">
                   <div className="p-3" style={{ maxWidth: 900 }}>
                     <h4
@@ -278,7 +276,6 @@ function HomeContent() {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={ewz} className="img-fluid" alt="Image" />
                 <div className="carousel-caption">
                   <div className="p-3" style={{ maxWidth: 900 }}>
                     <h4
