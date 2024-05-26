@@ -5,6 +5,7 @@ import "./FloatButton.css";
 function FloatButton() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+
   useEffect(() => {
     function handleFloatingButtonClick(e) {
       e.preventDefault();
@@ -20,7 +21,6 @@ function FloatButton() {
 
     function handleDocumentClick(e) {
       const container = $(".floatingButton");
-      // if the target of the click isn't the container nor a descendant of the container
       if (
         !container.is(e.target) &&
         $(".floatingButtonWrap").has(e.target).length === 0
@@ -34,7 +34,6 @@ function FloatButton() {
         $(".floatingMenu").hide();
       }
 
-      // if the target of the click isn't the container and a descendant of the menu
       if (
         !container.is(e.target) &&
         $(".floatingMenu").has(e.target).length > 0
@@ -47,7 +46,6 @@ function FloatButton() {
     $(".floatingButton").on("click", handleFloatingButtonClick);
     $(document).on("click", handleDocumentClick);
 
-    // Cleanup on unmount
     return () => {
       $(".floatingButton").off("click", handleFloatingButtonClick);
       $(document).off("click", handleDocumentClick);
@@ -62,6 +60,36 @@ function FloatButton() {
     } else {
       audioRef.current.pause();
       setIsPlaying(false);
+    }
+  }
+
+  function handleScreamChallengeClick(e) {
+    e.preventDefault();
+
+    const scriptId = "scream-script";
+    let script = document.getElementById(scriptId);
+
+    if (!script) {
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "/path/to/scream.js"; // Ensure this path is correct
+      script.onload = () => {
+        if (window.dialog && typeof window.dialog.showModal === "function") {
+          window.dialog.showModal();
+        } else {
+          console.error("Failed to load scream.js or dialog.showModal is not a function");
+        }
+      };
+      script.onerror = () => {
+        console.error("Failed to load scream.js");
+      };
+      document.body.appendChild(script);
+    } else {
+      if (window.dialog && typeof window.dialog.showModal === "function") {
+        window.dialog.showModal();
+      } else {
+        console.error("dialog.showModal is not a function");
+      }
     }
   }
 
@@ -80,14 +108,14 @@ function FloatButton() {
               <a href="#">Add Table</a>
             </li>
             <li>
-              <a href="#" onclick="window.dialog.showModal();">
-                Scream Challenge &nbsp;<i class="fa-solid fa-gamepad"></i>
+              <a href="#" onClick={handleScreamChallengeClick}>
+                Scream Challenge &nbsp;<i className="fa-solid fa-gamepad"></i>
               </a>
             </li>
             <li>
               <a href="#" onClick={handlePlayMusicClick}>
                 {isPlaying ? "Pause Music" : "Play Music"} &nbsp;
-                <i class="fa-solid fa-music"></i>
+                <i className="fa-solid fa-music"></i>
               </a>
             </li>
           </ul>

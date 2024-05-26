@@ -1,0 +1,226 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .cntainer {
+    max-width: 100%;
+    width: 100%;
+    height: 100vh; /* Ensure it takes the full height of the viewport */
+    border: 3px solid black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: -2;
+    background-image: url('./imagaes/backs.jpg'); /* Adjust path as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .video-bg {
+    background: none; /* Remove background image when video is active */
+  }
+  
+  .background-video {
+    max-width: 100%;
+    min-width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 8;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .cntainer img {
+    max-width: 100%;
+    min-width: 40%;
+    width: 400px;
+    margin-bottom: 10px;
+  }
+  
+  .cntainer h1 {
+   
+    text-align: center;
+    margin-left: 45px;
+    font-size: 70px;
+  }
+  
+  .col-7 {
+    width: 800px;
+    display: block;
+    margin: auto;
+    margin-top: 35px;
+    z-index: 5;
+  
+  }
+  
+  .barong img {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  .animate {
+    animation: bounce 1s infinite;
+    z-index: 1; /* Set to a positive value */
+  }
+  
+  .col-7 video {
+    z-index: 3;
+    width: 800px;
+  }
+  
+  .decibelmeter {
+    height: 1px;
+    width: 970px;
+    position: absolute;
+    bottom: 0; /* Ubah bottom menjadi 50% */
+    left: 50%; /* Tambahkan left 50% */
+    transform: translate(-50%, 50%); /* Tambahkan transform */
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    z-index: -1;
+    max-width: 87%;
+    min-width: 45%;
+  }
+  
+  .start {
+    font-size: 20px;
+  }
+  
+  .col-md-12 {
+    height: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 10px;
+    background-color: blanchedalmond;
+    max-width: 100%;
+    min-width: 40%;
+  }
+  
+  .col-md-12 button {
+    font-family: "Poetsen One", sans-serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    width: 250px;
+    height: 75px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 5%;
+    font-size: 50px;
+    --glow-color: rgb(19, 249, 61);
+   --glow-spread-color: rgba(0, 112, 232, 0.781);
+   --enhanced-glow-color: rgb(18, 150, 211);
+   --btn-color: rgb(201, 48, 48);
+   
+   border: .25em solid var(--glow-color);
+   padding: 1em 3em;
+   color: var(--glow-color);
+   font-size: 30px;
+   font-weight: bold;
+   background-color: var(--btn-color);
+   border-radius: 1em;
+   outline: none;
+   box-shadow: 0 0 1em .1em var(--glow-color),
+          
+          inset 0 0 .75em .25em var(--glow-color);
+   text-shadow: 0 0 .5em var(--glow-color);
+   position: relative;
+   transition: all 0.3s;
+  }
+  button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .1;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 1em 1.5em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }
+  
+  .scream {
+    font-size: calc(20px + 18vh);
+    line-height: calc(20px + 5vh);
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+      0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 6s infinite;
+    -webkit-animation: blink 6s infinite;
+    z-index: 100;
+    position: relative;
+  }
+  
+  @-webkit-keyframes blink {
+    20%, 24%, 55% {
+      color: #111;
+      text-shadow: none;
+    }
+  
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+        0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
+  
+  @keyframes blink {
+    20%, 24%, 55% {
+      color: #111;
+      text-shadow: none;
+    }
+  
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+        0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
+  
