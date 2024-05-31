@@ -10,21 +10,23 @@ import CategoryDetails from "./components/CategoryDetails"; // Import the new co
 import Information from "./components/Information";
 import FloatButton from "./components/FloatButton";
 import Cursor from "./components/cursor.js";
+import Scream from "./components/scream.js";
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Header />
         <FloatButton />
         <Cursor />
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Things-to-do" element={<ThingsToDo />} />
           <Route path="/About" element={<About />} />
           <Route path="/Game" element={<Game />} />
-          <Route path="/tour/:category" element={<CategoryDetails />} />{" "}
+          <Route path="/tour/:category" element={<CategoryDetails />} />
           <Route path="/Information" element={<Information />} />
+          <Route path="/Scream" element={<Scream />} />
           {/* More routes can be added here */}
         </Routes>
         <Footer />

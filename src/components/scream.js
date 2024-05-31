@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
 import "./scream.css";
 import barong from "./imagaes/barong.png";
 import bgvid from "./imagaes/backs_1.mp4";
@@ -13,7 +12,8 @@ function Game() {
 
   const startGame = () => {
     console.log("Start game button clicked");
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
     navigator.mediaDevices
       .getUserMedia({ audio: true })
       .then((stream) => {
@@ -51,11 +51,6 @@ function Game() {
 
   return (
     <div className={`App ${bgVideoActive ? "video-bg" : ""}`}>
-      <Helmet>
-        <link rel="stylesheet" href="templatetravela/lightbox.min.css" />
-        <link rel="stylesheet" href="templatetravela/owl.carousel.min.css" />
-        <link rel="stylesheet" href="templatetravela/bootstrap.min.css" />
-      </Helmet>
       <div className="cntainer">
         <div className="container-fluid col-md-6">
           <h1 className="scream">{screamText}</h1>

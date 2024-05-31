@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import $ from "jquery";
 import "./FloatButton.css";
+import { NavLink } from "react-router-dom";
 
 function FloatButton() {
   const audioRef = useRef(null);
@@ -77,7 +78,9 @@ function FloatButton() {
         if (window.dialog && typeof window.dialog.showModal === "function") {
           window.dialog.showModal();
         } else {
-          console.error("Failed to load scream.js or dialog.showModal is not a function");
+          console.error(
+            "Failed to load scream.js or dialog.showModal is not a function"
+          );
         }
       };
       script.onerror = () => {
@@ -102,9 +105,9 @@ function FloatButton() {
           </a>
           <ul className="floatingMenu">
             <li>
-              <a href="#" onClick={handleScreamChallengeClick}>
+              <NavLink to="/Scream">
                 Scream Challenge &nbsp;<i className="fa-solid fa-gamepad"></i>
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#" onClick={handlePlayMusicClick}>

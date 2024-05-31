@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
+
 import { useParams } from "react-router-dom";
 import $ from "jquery";
 
+// Ensure all image imports are correct and paths are valid
 import img1 from "./imgoftourcategory/img1.jpg";
 import img2 from "./imgoftourcategory/img2.jpg";
-import img3 from "./imgoftourcategory/img3.jpg";
 import img4 from "./imgoftourcategory/img4.jpg";
 import img5 from "./imgoftourcategory/img5.jpg";
 import img6 from "./imgoftourcategory/img6.jpg";
 import img7 from "./imgoftourcategory/img7.jpg";
-import img8 from "./imgoftourcategory/img8.jpg";
 import img9 from "./imgoftourcategory/img9.jpg";
 import img10 from "./imgoftourcategory/img10.jpg";
-import img11 from "./imgoftourcategory/img11.jpg";
 import img12 from "./imgoftourcategory/img12.jpg";
 import img13 from "./imgoftourcategory/img13.jpg";
 import img14 from "./imgoftourcategory/img14.jpg";
@@ -24,14 +22,10 @@ import img18 from "./imgoftourcategory/img18.jpg";
 import img19 from "./imgoftourcategory/img19.jpg";
 import img20 from "./imgoftourcategory/img20.jpg";
 import img21 from "./imgoftourcategory/img21.jpg";
-import img22 from "./imgoftourcategory/img22.jpg";
 import img23 from "./imgoftourcategory/img23.jpg";
-import img24 from "./imgoftourcategory/img24.jpg";
 import img25 from "./imgoftourcategory/img25.jpg";
-import img26 from "./imgoftourcategory/img26.jpg";
 import img27 from "./imgoftourcategory/img27.jpg";
 import img28 from "./imgoftourcategory/img28.jpg";
-import img29 from "./imgoftourcategory/img29.jpg";
 import img30 from "./imgoftourcategory/img30.jpg";
 
 const CategoryDetails = () => {
@@ -42,7 +36,7 @@ const CategoryDetails = () => {
     $(document).ready(function () {
       $(this).scrollTop(0);
     });
-    // Assuming images data is fetched or imported here
+
     const images = [
       {
         id: 1,
@@ -260,17 +254,12 @@ const CategoryDetails = () => {
 
   return (
     <div>
-      <Helmet>
-        <link rel="stylesheet" href="../templatetravela/lightbox.min.css" />
-        <link rel="stylesheet" href="../templatetravela/owl.carousel.min.css" />
-        <link rel="stylesheet" href="../templatetravela/bootstrap.min.css" />
-      </Helmet>
       <div className="container-fluid blog py-5">
         <div className="container py-5">
           <div className="mx-auto text-center mb-5" style={{ maxWidth: 900 }}>
             <h5 className="section-title px-3">{category}</h5>
             <h1 className="mb-4">
-              A Top Destination in Bali for{" "}
+              A Top Destination in Bali for
               <span className="text-capitalize font-weight-bold text-primary text-decoration-underline">
                 {category}
               </span>
